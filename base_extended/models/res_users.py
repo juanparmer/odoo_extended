@@ -29,7 +29,7 @@ class res_users(models.Model):
         obj_ru = self.env['res.users']
         obj_imm = self.env['ir.module.module']
         user = self.env.user
-        rus = obj_ru.search([('active', '=', 'True')])
+        rus = obj_ru.search([('active', '=', 'True'), ('share', '=', False)])
         rus_num = len(rus)
         imm_web = obj_imm.search([('name', '=', 'website'), ('state', '=', 'installed')])
         imm_wsa = obj_imm.search([('name', '=', 'website_sale'), ('state', '=', 'installed')])
