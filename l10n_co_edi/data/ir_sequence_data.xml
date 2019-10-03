@@ -1,0 +1,8 @@
+<odoo>
+    <data>
+        <record model="ir.sequence" id="ir_sequence_l10n_co">
+            <field name="name">Electronic Invoice</field>
+            <field name="implementation">no_gap</field>
+        </record>
+    </data>
+</odoo>

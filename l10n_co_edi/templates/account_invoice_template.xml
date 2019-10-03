@@ -1,0 +1,12 @@
+<odoo>
+    <data>
+        <template id="account_invoice_template">
+            <root>
+                <user t-foreach="docs" t-as="doc">
+                    <name t-esc="doc.name"/>
+                    <vat t-esc="doc.partner_id.name"/>
+                </user>
+            </root>
+        </template>
+    </data>
+</odoo>

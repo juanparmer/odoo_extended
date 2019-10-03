@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+        <report
+            id="account_invoice_report"
+            model="account.invoice"
+            string="Electronic Invoice"
+            report_type="qweb-xml"
+            name="electronic_invoice.account_invoice_template"
+            file="electronic_invoice.xml"
+            attachment_use="True"
+            attachment="(object.state in ('open','paid')) and
+                ('INV'+(object.number or '').replace('/','')+'.xml')"
+        />
+    </data>
+</odoo>
