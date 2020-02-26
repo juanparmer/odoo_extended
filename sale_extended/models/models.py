@@ -2,8 +2,8 @@
 
 from odoo import models, fields, api
 
-# class base_vat_co(models.Model):
-#     _name = 'base_vat_co.base_vat_co'
+# class sale_extended(models.Model):
+#     _name = 'sale_extended.sale_extended'
 
 #     name = fields.Char()
 #     value = fields.Integer()

@@ -181,13 +181,13 @@
                            <sts:InvoiceControl>
                               <sts:InvoiceAuthorization> t-esc="record.company_id.l10n_co_invoice_authorization" </sts:InvoiceAuthorization>
                               <sts:AuthorizationPeriod>
-                                 <cbc:StartDate>2019-01-19</cbc:StartDate>
-                                 <cbc:EndDate>2030-01-19</cbc:EndDate>
+                                 <cbc:StartDate>t-esc="record.company_id.l10n_co_ap_sdate"</cbc:StartDate>
+                                 <cbc:EndDate>t-esc="record.company_id.l10n_co_ap_edate"</cbc:EndDate>
                               </sts:AuthorizationPeriod>
                               <sts:AuthorizedInvoices>
-                                 <sts:Prefix>SETP</sts:Prefix>
-                                 <sts:From>990000000</sts:From>
-                                 <sts:To>995000000</sts:To>
+                                 <sts:Prefix>t-esc="record.company_id.l10n_co_ai_prefix"</sts:Prefix>
+                                 <sts:From>t-esc="record.company_id.l10n_co_ai_from"</sts:From>
+                                 <sts:To>t-esc="record.company_id.l10n_co_ai_to"</sts:To>
                               </sts:AuthorizedInvoices>
                            </sts:InvoiceControl>
                            <sts:InvoiceSource>

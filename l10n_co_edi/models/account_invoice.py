@@ -63,8 +63,19 @@ class AccountInvoice(models.Model):
             raise UserError(_("The maximum length for NIF number is 10. %s have a VAT number too long: %s.")
                             % (seller.display_name, seller.vat))
 
+        # Invoice Control
         if not seller.l10n_co_invoice_authorization:
             raise UserError(_("%s must have a invoice authorization") % seller.display_name)
+        if not seller.l10n_co_ap_sdate:
+            raise UserError(_("%s must have a start date authorization period") % seller.display_name)
+        if not seller.l10n_co_ap_edate:
+            raise UserError(_("%s must have a end date authorization period") % seller.display_name)
+        if not seller.l10n_co_ai_prefix:
+            raise UserError(_("%s must have a prefix authorization period") % seller.display_name)
+        if not seller.l10n_co_ai_from:
+            raise UserError(_("%s must have a from range authorization period") % seller.display_name)
+        if not seller.l10n_co_ai_to:
+            raise UserError(_("%s must have a to range authorization period") % seller.display_name)
 
         if not buyer.vat:
             raise UserError(_("The buyer, %s, or his company must have either a VAT number either a NIF")
