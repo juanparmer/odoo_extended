@@ -10,12 +10,25 @@
                         <group>
                             <group>
                                 <field name="l10n_co_email" widget="email"/>
-                                <field name="l10n_co_code_pt"/>
-                                <field name="l10n_co_sequence_id"/>
+                                <field name="l10n_co_code_pt" required="True"/>
+                                <field name="l10n_co_sequence_id" required="True"/>
                             </group>
-                            <group>
+                            <group string="Invoice Control" name="invoice_control">
                                 <field name="l10n_co_invoice_authorization" placeholder="e.g. 18760000001"
                                        required="True"/>
+                                <label for="l10n_co_ap_sdate" string="Authorization Period"/>
+                                <div>
+                                    <field name="l10n_co_ap_sdate" class="oe_inline" required="True"/>
+                                    <field name="l10n_co_ap_sdate" class="oe_inline" required="True"/>
+                                </div>
+                                <field name="l10n_co_ai_prefix" placeholder="e.g. SETP" required="True"/>
+                                <label for="l10n_co_ai_from" string="Authorized Invoices"/>
+                                <div>
+                                    <field name="l10n_co_ai_from" class="oe_inline" placeholder="e.g. 990000000"
+                                           required="True"/>
+                                    <field name="l10n_co_ai_to" class="oe_inline" placeholder="e.g. 995000000"
+                                           required="True"/>
+                                </div>
                             </group>
                         </group>
                     </page>

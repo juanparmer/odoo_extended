@@ -1,0 +1,35 @@
+<odoo>
+    <data>
+        <record id="partner_santillana" model="res.partner">
+            <field name="name">Vendedor</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="supplier" eval="False"/>
+            <field name="customer" eval="False"/>
+            <field name="street">Santilana</field>
+            <field name="city">Bogota</field>
+            <field model="res.country.state" name="state_id" search="[('code','ilike','NJ')]"/>
+            <field name="zip">07002</field>
+            <field name="country_id" ref="base.co"/>
+            <field name="company_name">Santillana</field>
+            <field name="tz">America/Bogota</field>
+            <field name="email">vendedor@santillana.com</field>
+            <field name="phone">(057)-123-4567</field>
+        </record>
+
+        <record id="santillana_user" model="res.users">
+            <field name="partner_id" ref="partner_santillana"/>
+            <field name="login">santillana</field>
+            <field name="password">santillana</field>
+            <field name="signature"><![CDATA[<span>-- <br/>Mr Santillana</span>]]></field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="groups_id" eval="[(6,0,ref('base.group_user'))]"/>
+            <field name="image" type="base64" file="base/static/img/user_demo-image.jpg"/>
+        </record>
+
+        <record id="group_santillana" model="res.groups">
+            <field name="name">Vendedores Santillana</field>
+            <field name="category_id" ref="base.module_category_sales_management"/>
+            <field name="users" eval="[(4,ref('santillana_user'))]"/>
+        </record>
+    </data>
+</odoo>
